@@ -1,0 +1,6 @@
+/acesso-*
+  X-Robots-Tag: noindex, nofollow
+
+/m-*
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: noindex, nofollow
