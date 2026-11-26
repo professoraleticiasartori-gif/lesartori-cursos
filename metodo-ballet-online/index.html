@@ -20,7 +20,7 @@
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1273662791544287');fbq('track','PageView');
 document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('a[href*="pay.hotmart.com"],a[href*="pay.kiwify"]'))fbq('track','ViewContent');});
-document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="pay.hotmart.com"],a[href*="pay.kiwify"]');if(a)fbq('track','InitiateCheckout');},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="pay.hotmart.com"],a[href*="pay.kiwify"]');if(a)fbq('track','InitiateCheckout');var w=e.target.closest&&e.target.closest('a.wa-link');if(w)fbq('track','Contact');},true);
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1273662791544287&ev=PageView&noscript=1"/></noscript>
 <style>
@@ -138,6 +138,19 @@ footer a{color:var(--blush)}
 #cortina.abre .centro,#cortina.abre .pular{opacity:0}
 #cortina.some{opacity:0;visibility:hidden;transition:opacity .6s ease, visibility 0s linear .6s}
 #confete{position:fixed;inset:0;z-index:99;pointer-events:none}
+
+
+/* WhatsApp */
+.wa{position:fixed;right:18px;bottom:22px;z-index:31;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:12px 18px 12px 14px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.25);transition:bottom .35s ease,transform .2s ease}
+.wa svg{width:28px;height:28px}
+.wa:hover{transform:translateY(-2px)}
+
+@media (max-width:759px){.wa span{display:none}.wa{padding:13px;right:14px}body.fixo-on .wa{bottom:92px}}
+.duvida{max-width:640px;margin:40px auto 0;text-align:center;border:1px solid rgba(247,182,203,.3);border-radius:20px;padding:26px 22px}
+.duvida h3{font-family:var(--display);font-style:italic;font-weight:600;font-size:30px;margin:0 0 8px;color:#fff}
+.duvida p{margin:0 0 18px;color:#d9c3c9}
+.duvida a{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;text-decoration:none;font-weight:700;letter-spacing:.03em;padding:14px 24px;border-radius:999px}
+.duvida a svg{width:24px;height:24px}
 
 @media (max-width:520px){
   .facts{grid-template-columns:1fr 1fr}
@@ -306,12 +319,19 @@ footer a{color:var(--blush)}
       <a class="btn" href="https://pay.hotmart.com/W108644348W?off=d6lgyeny&checkoutMode=10" target="_blank" rel="noopener">QUERO O ACESSO VITALÍCIO<small>Preço de Black Friday só até 30/11</small></a>
       <p class="garantia" style="color:#d9c3c9">Compra segura pela Hotmart · 7 dias de garantia</p>
     </div>
+    <div class="duvida rv">
+      <h3>Ficou com alguma dúvida?</h3>
+      <p>Fale direto comigo no WhatsApp. Eu mesma te respondo. 💗</p>
+      <a class="wa-link" href="https://wa.me/5513974189463?text=Ol%C3%A1%2C%20Le!%20Vi%20a%20p%C3%A1gina%20do%20M%C3%A9todo%20Ballet%20Online%20e%20quero%20tirar%20uma%20d%C3%BAvida%20sobre%20a%20Turma%201." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.6l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 9.9 5.2 16 5.2s11 4.7 11 10.6-4.9 10.6-11 10.6zm6-7.9c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.6-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.5c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.9 5.1 2.9 1.1 3.5.9 4.1.8.6-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.1-.3-.2-.6-.4z"/></svg>CHAMAR NO WHATSAPP</a>
+    </div>
   </div>
 </section>
 
 <footer class="dark">
-  <div class="wrap">Método Ballet Online por Le Sartori · Sonho não tem prazo de validade.<br><a href="https://lesartori.com.br">lesartori.com.br</a> · <a href="https://instagram.com/prof.lesartori">@prof.lesartori</a></div>
+  <div class="wrap">Método Ballet Online por Le Sartori · Sonho não tem prazo de validade.<br><a href="https://lesartori.com.br">lesartori.com.br</a> · <a href="https://instagram.com/prof.lesartori">@prof.lesartori</a> · <a class="wa-link" href="https://wa.me/5513974189463?text=Ol%C3%A1%2C%20Le!%20Vi%20a%20p%C3%A1gina%20do%20M%C3%A9todo%20Ballet%20Online%20e%20quero%20tirar%20uma%20d%C3%BAvida%20sobre%20a%20Turma%201." target="_blank" rel="noopener">WhatsApp (13) 97418-9463</a></div>
 </footer>
+
+<a class="wa wa-link" href="https://wa.me/5513974189463?text=Ol%C3%A1%2C%20Le!%20Vi%20a%20p%C3%A1gina%20do%20M%C3%A9todo%20Ballet%20Online%20e%20quero%20tirar%20uma%20d%C3%BAvida%20sobre%20a%20Turma%201." target="_blank" rel="noopener" aria-label="Falar com a Le no WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.6l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 9.9 5.2 16 5.2s11 4.7 11 10.6-4.9 10.6-11 10.6zm6-7.9c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.6-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.5c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.9 5.1 2.9 1.1 3.5.9 4.1.8.6-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.1-.3-.2-.6-.4z"/></svg><span>Dúvidas? Fale comigo</span></a>
 
 <div class="fixo" id="fixo">
   <div class="t"><b>12x R$ 66,42</b>termina em <span data-relogio="curto">--</span></div>
@@ -341,7 +361,7 @@ footer a{color:var(--blush)}
 
   // Barra fixa no celular depois do topo
   var fixo=document.getElementById('fixo');
-  addEventListener('scroll',function(){fixo.classList.toggle('on', scrollY>600)},{passive:true});
+  addEventListener('scroll',function(){var o=scrollY>600;fixo.classList.toggle('on',o);document.body.classList.toggle('fixo-on',o)},{passive:true});
 
   // Abertura com cortinas + confete
   var c=document.getElementById('cortina'), aberta=false;
